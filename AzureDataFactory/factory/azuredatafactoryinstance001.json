@@ -1,0 +1,9 @@
+{
+	"name": "azuredatafactoryinstance001",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0e0c34a9-de3d-46a3-a1b8-c4ab2b8d5d99",
+		"tenantId": "84f1e4ea-8554-43e1-8709-f0b8589ea118"
+	}
+}
