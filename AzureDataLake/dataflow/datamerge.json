@@ -1,5 +1,5 @@
 {
-	"name": "DataMerge",
+	"name": "datamerge",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -9,14 +9,14 @@
 						"referenceName": "Customer",
 						"type": "DatasetReference"
 					},
-					"name": "Customertable"
+					"name": "customertable"
 				},
 				{
 					"dataset": {
 						"referenceName": "Support",
 						"type": "DatasetReference"
 					},
-					"name": "Supporttable"
+					"name": "supporttable"
 				}
 			],
 			"sinks": [
@@ -53,8 +53,9 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     limit: 100,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> Customertable",
+				"     format: 'table') ~> customertable",
 				"source(output(",
 				"          AddressID as integer,",
 				"          AddressLine1 as string,",
@@ -69,12 +70,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> Supporttable",
-				"Customertable, Supporttable join(Customer-table@rowguid == Support-table@rowguid,",
+				"     format: 'table') ~> supporttable",
+				"customertable, supporttable join(customertable@rowguid == supporttable@rowguid,",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
-				"     broadcast: 'auto')~> join1",
+				"     broadcast: 'off')~> join1",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
