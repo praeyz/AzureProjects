@@ -1,0 +1,17 @@
+{
+	"name": "Query CSV files",
+	"properties": {
+		"content": {
+			"query": "\n/* Read a csv file */\nselect top 10 *\nfrom openrowset(\n    bulk 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.csv',\n    format = 'csv',\n    parser_version = '2.0',\n    firstrow = 2 ) as rows\n\n\n/* Explicitly specify schema */\nselect top 10 *\nfrom openrowset(\n        bulk 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.csv',\n        format = 'csv',\n        parser_version ='2.0',\n        firstrow = 2\n    ) with (\n        date_rep date 1,\n        cases int 5,\n        geo_id varchar(6) 8\n    ) as rows\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
