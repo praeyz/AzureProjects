@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this hands-on lab, I created an SQL DB and Synapse Workspace. In the Synapse Workspace, I created a multi-step pipeline that will copy data from my SQL DB and move it to a data lake. You will also learn how to create activity dependencies.
+In this hands-on lab, I created an SQL DB and Synapse Workspace. In the Synapse Workspace, I created a multi-step pipeline to copy data from my SQL DB and move it to a data lake. I will also generate activity dependencies.
 
 ## Learning Objectives
 
