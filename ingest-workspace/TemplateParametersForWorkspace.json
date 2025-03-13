@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "ingest-workspace"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabaseformetadata_password": {
+			"value": ""
+		},
+		"SQLDB_password": {
+			"value": ""
+		},
+		"ingest-workspace-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:ingest-workspace.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"AzureSqlDatabaseformetadata_properties_typeProperties_server": {
+			"value": "ingest-workspace001.database.windows.net"
+		},
+		"AzureSqlDatabaseformetadata_properties_typeProperties_database": {
+			"value": "ingest-workspace"
+		},
+		"AzureSqlDatabaseformetadata_properties_typeProperties_userName": {
+			"value": "praeyz"
+		},
+		"SQLDB_properties_typeProperties_server": {
+			"value": "ingest-workspace001.database.windows.net"
+		},
+		"SQLDB_properties_typeProperties_database": {
+			"value": "ingest-workspace"
+		},
+		"SQLDB_properties_typeProperties_userName": {
+			"value": "praeyz"
+		},
+		"ingest-workspace-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://ingestworkspace.dfs.core.windows.net"
+		}
+	}
+}
