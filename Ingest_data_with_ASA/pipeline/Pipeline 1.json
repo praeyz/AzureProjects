@@ -143,7 +143,9 @@
 						"referenceName": "customer",
 						"type": "DatasetReference"
 					},
-					"fieldList": []
+					"fieldList": [
+						"columnCount"
+					]
 				}
 			}
 		],
